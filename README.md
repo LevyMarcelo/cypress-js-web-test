@@ -1,13 +1,13 @@
-# cypress-web-test
+# Cypress Web Test
 
-## Language, Framework and Code Editor:
+## Language, framework and code editor:
 * JavaScript
 * Cypress
 * Visual Studio Code
 
 ## Project execution:
 
-### The Launchpad
+### The launchpad
 * npx cypress open >>> click "login.spec.js"
 * npm run cy:open >>> click "login.spec.js"
 * Visual Studio Code >>> NPM SCRIPTS >>> cy:open >>> click "login.spec.js"
