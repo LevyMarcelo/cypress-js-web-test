@@ -2,7 +2,7 @@
 
 ## Language, framework and code editor:
 * JavaScript
-* Cypress
+* Cypress (version 13.1.0)
 * Visual Studio Code
 
 ## Project execution:

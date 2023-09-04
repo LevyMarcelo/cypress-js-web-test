@@ -1,15 +1,13 @@
-/// <reference types="Cypress" />
-
 describe('Login', () => {
 
   beforeEach(() => {
-    cy.visit('https://www.saucedemo.com/')
+    cy.visit('/')
   })
 
   it('Login successfully', () => {
     cy.login('standard_user', 'secret_sauce')
     cy.get('.title').should('have.text', 'Products')
-    cy.url().should('eq', 'https://www.saucedemo.com/inventory.html') 
+    cy.url().should('eq', 'https://www.saucedemo.com/inventory.html')
   })
 
   it('Login failed - empty username and password', () => {
