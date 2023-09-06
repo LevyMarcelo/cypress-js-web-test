@@ -8,10 +8,16 @@ describe('Login', () => {
     cy.url().should('eq', 'https://www.saucedemo.com/inventory.html')
   })
 
-  it('Login failed - empty username and password', () => {
-    cy.visit('/')
-    cy.get('[data-test="login-button"]').click()
-    cy.get('[data-test="error"]').should('have.text', 'Epic sadface: Username is required')
+  it('Login failed - invalid user', () => {
+    cy.login('test', 'secret_sauce')
+    cy.get('[data-test="error"]')
+      .should('have.text', 'Epic sadface: Username and password do not match any user in this service')
+  })
+
+  it('Login failed - invalid password', () => {
+    cy.login('standard_user', 'test')
+    cy.get('[data-test="error"]')
+      .should('have.text', 'Epic sadface: Username and password do not match any user in this service')
   })
 
   it('Login failed - empty username', () => {
@@ -24,15 +30,9 @@ describe('Login', () => {
     cy.get('[data-test="error"]').should('have.text', 'Epic sadface: Password is required')
   })
 
-  it('Login failed - invalid user', () => {
-    cy.login('test', 'secret_sauce')
-    cy.get('[data-test="error"]')
-      .should('have.text', 'Epic sadface: Username and password do not match any user in this service')
-  })
-
-  it('Login failed - invalid password', () => {
-    cy.login('standard_user', 'test')
-    cy.get('[data-test="error"]')
-      .should('have.text', 'Epic sadface: Username and password do not match any user in this service')
+  it('Login failed - empty username and password', () => {
+    cy.visit('/')
+    cy.get('[data-test="login-button"]').click()
+    cy.get('[data-test="error"]').should('have.text', 'Epic sadface: Username is required')
   })
 })

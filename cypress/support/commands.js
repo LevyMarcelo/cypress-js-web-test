@@ -21,9 +21,11 @@ Cypress.Commands.add('finishCheckout', (firstName, lastName, postalCode) => {
   cy.get('[data-test="finish"]').click()
 })
 
-Cypress.Commands.add('removeCartItem', () => {
+Cypress.Commands.add('addToCart', () => {
   cy.get('[data-test="add-to-cart-sauce-labs-backpack"]').click()
   cy.get('.shopping_cart_link').click()
-  cy.get('.cart_item').should('be.visible')
+})
+
+Cypress.Commands.add('removeCartItem', () => {
   cy.get('[data-test="remove-sauce-labs-backpack"]').click()
 })
