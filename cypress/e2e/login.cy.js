@@ -1,8 +1,6 @@
-describe('Login', () => {
+/// <reference types="Cypress" />
 
-  beforeEach(() => {
-    cy.visit('/')
-  })
+describe('Login', () => {
 
   it('Login successfully', () => {
     cy.login('standard_user', 'secret_sauce')
@@ -11,6 +9,7 @@ describe('Login', () => {
   })
 
   it('Login failed - empty username and password', () => {
+    cy.visit('/')
     cy.get('[data-test="login-button"]').click()
     cy.get('[data-test="error"]').should('have.text', 'Epic sadface: Username is required')
   })
@@ -26,13 +25,13 @@ describe('Login', () => {
   })
 
   it('Login failed - invalid user', () => {
-    cy.login('teste', 'secret_sauce')
+    cy.login('test', 'secret_sauce')
     cy.get('[data-test="error"]')
       .should('have.text', 'Epic sadface: Username and password do not match any user in this service')
   })
 
   it('Login failed - invalid password', () => {
-    cy.login('standard_user', 'teste')
+    cy.login('standard_user', 'test')
     cy.get('[data-test="error"]')
       .should('have.text', 'Epic sadface: Username and password do not match any user in this service')
   })

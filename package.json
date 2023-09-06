@@ -1,8 +1,8 @@
 {
   "name": "cypress-web-test",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Cypress Web Test",
+  "main": "cypress.config.js",
   "scripts": {
     "cy:open": "cypress open",
     "cy:open:mobile": "cypress open --config viewportWidth=410 viewportHeight=860",
@@ -10,7 +10,7 @@
     "test:mobile": "cypress run --config viewportWidth=410 viewportHeight=860"
   },
   "author": "Levy Marcelo G. Cunha",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "cypress": "^13.1.0"
   }
