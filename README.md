@@ -1,4 +1,4 @@
-# Cypress Web Test
+# Cypress JavaScript Web Test
 
 ## Language, framework and code editor:
 * JavaScript
