@@ -1,7 +1,7 @@
 {
-  "name": "cypress-web-test",
+  "name": "cypress-js-web-test",
   "version": "1.0.0",
-  "description": "Cypress Web Test",
+  "description": "Cypress JavaScript Web Test",
   "main": "cypress.config.js",
   "scripts": {
     "cy:open": "cypress open",
