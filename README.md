@@ -8,9 +8,9 @@
 ## Project execution:
 
 ### The launchpad
-* npx cypress open >>> click "login.cy.js"
-* npm run cy:open >>> click "login.cy.js"
-* Visual Studio Code >>> NPM SCRIPTS >>> cy:open >>> click "login.cy.js"
+* npx cypress open >>> click "<spec>.cy.js"
+* npm run cy:open >>> click "<spec>.cy.js"
+* Visual Studio Code >>> NPM SCRIPTS >>> cy:open >>> click "<spec>.cy.js"
 
 ### Command line (headless)
 * npx cypress run
