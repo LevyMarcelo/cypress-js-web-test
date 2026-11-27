@@ -133,34 +133,34 @@ O projeto disponibiliza comandos para execução dos testes em modo interativo e
 
 **Execução pela interface do Cypress:**
 
-\```bash
+```bash
 # Abrir o Cypress
 npm run cy:open
-\```
+```
 
 Após a abertura da interface, selecionar o arquivo de teste desejado.
 
 **Execução pelo terminal:**
 
-\```bash
+```bash
 # Executar todos os testes em modo headless
 npm test
 
 # Executar utilizando o comando npx
 npx cypress run
-\```
+```
 
 **Execução com viewport reduzida:**
 
 O projeto também disponibiliza scripts com viewport de 410 × 860 pixels, permitindo executar os fluxos em uma resolução menor.
 
-\```bash
+```bash
 # Abrir o Cypress com viewport reduzida
 npm run cy:open:mobile
 
 # Executar os testes com viewport reduzida
 npm run test:mobile
-\```
+```
 
 Essa configuração altera as dimensões da janela de visualização, mas não substitui testes em dispositivos móveis reais ou emuladores Android e iOS.
 
