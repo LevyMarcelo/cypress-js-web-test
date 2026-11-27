@@ -112,7 +112,7 @@ O Cypress e suas dependências são instalados por meio do npm.
 **Clonar o repositório:**
 
 ```bash
-git clone <URL_DO_REPOSITORIO>
+git clone https://github.com/LevyMarcelo/cypress-js-web-test
 ```
 
 **Acessar o diretório:**
