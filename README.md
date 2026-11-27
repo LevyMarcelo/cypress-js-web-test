@@ -2,7 +2,7 @@
 
 ## 1. Visão geral do projeto
 
-Projeto de automação de testes Web com Cypress e JavaScript, aplicando práticas de organização e reutilização de comandos para validar funcionalidades da aplicação.
+Projeto de automação de testes Web com Cypress e JavaScript, aplicando práticas de organização e reutilização de comandos para validação funcional.
 
 ## 2. Objetivos
 
@@ -16,9 +16,7 @@ Desenvolver uma solução de automação de testes Web, priorizando:
 
 ## 3. Aplicação sob teste
 
-**SauceDemo**
-
-Aplicação Web utilizada para validar funcionalidades de autenticação, navegação, carrinho de compras e finalização de pedidos.
+[SauceDemo](https://www.saucedemo.com/), aplicação de demonstração de comércio eletrônico.
 
 ## 4. Tecnologias utilizadas
 
@@ -46,7 +44,7 @@ O escopo automatizado contempla três funcionalidades principais:
 
 | Funcionalidade | Cenários |
 |---|---|
-| Login | Autenticação com credenciais válidas, usuário inválido, senha inválida e campos vazios |
+| Login | Autenticação com credenciais válidas, usuário inválido, senha inválida, usuário vazio, senha vazia e ambos os campos vazios |
 | Logout | Encerramento de sessão com sucesso |
 | Carrinho de compras | Adição de produto, remoção de produto e finalização de compra |
 
@@ -135,37 +133,48 @@ O projeto disponibiliza comandos para execução dos testes em modo interativo e
 
 **Execução pela interface do Cypress:**
 
-```bash
+\```bash
 # Abrir o Cypress
 npm run cy:open
-```
+\```
 
 Após a abertura da interface, selecionar o arquivo de teste desejado.
 
 **Execução pelo terminal:**
 
-```bash
+\```bash
 # Executar todos os testes em modo headless
 npm test
 
 # Executar utilizando o comando npx
 npx cypress run
-```
+\```
 
 **Execução com viewport reduzida:**
 
-O projeto também disponibiliza scripts com viewport de 410 × 860 pixels, permitindo avaliar os fluxos em uma resolução menor.
+O projeto também disponibiliza scripts com viewport de 410 × 860 pixels, permitindo executar os fluxos em uma resolução menor.
 
-```bash
+\```bash
 # Abrir o Cypress com viewport reduzida
 npm run cy:open:mobile
 
 # Executar os testes com viewport reduzida
 npm run test:mobile
-```
+\```
 
-Essa configuração simula uma dimensão de tela menor, não substituindo testes em dispositivos móveis reais ou emuladores Android e iOS.
+Essa configuração altera as dimensões da janela de visualização, mas não substitui testes em dispositivos móveis reais ou emuladores Android e iOS.
 
 ## 12. Integração contínua
 
-O projeto utiliza GitHub Actions para automatizar a execução dos testes.
+O projeto utiliza GitHub Actions para automatizar a execução dos testes em eventos de push e pull request.
+
+A pipeline contempla:
+
+- Preparação do ambiente de execução.
+- Execução dos testes End-to-End utilizando Cypress no navegador Chrome.
+- Publicação de screenshots gerados durante a execução como artefatos.
+- Disponibilização dos artefatos para consulta no GitHub Actions.
+
+Os artefatos são configurados para retenção de até 7 dias.
+
+A gravação de vídeos está desabilitada na configuração atual do Cypress.
